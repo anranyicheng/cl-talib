@@ -13,7 +13,7 @@
   (t (:default "libta_lib")))
 (cffi:use-foreign-library talib)
 (sb-ext:gc :full t)
-
+(ensure-directories-exist "./specs/")
 (c-include '(cl-talib include "ta_libc.h") :spec-path '(cl-talib specs))
 ;; init ta-lib
 (ta-initialize)
