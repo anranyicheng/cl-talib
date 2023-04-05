@@ -7,13 +7,16 @@
 #+sbcl
 (eval-when (:compile-toplevel :load-toplevel :execute)
   (sb-int:set-floating-point-modes :traps nil))
+(eval-when (:compile-toplevel :load-toplevel)
+  (ensure-directories-exist
+   (concatenate 'string (namestring (asdf:system-source-directory :cl-talib)) "specs/")))
 ;; Arithmetic error FLOATING-POINT-INVALID-OPERATION signalled ---<<<
 (cffi:define-foreign-library talib
   (:unix (:or "libta_lib.so" "libta_lib.so.0"))
   (t (:default "libta_lib")))
 (cffi:use-foreign-library talib)
 (sb-ext:gc :full t)
-(ensure-directories-exist "./specs/")
+
 (c-include '(cl-talib include "ta_libc.h") :spec-path '(cl-talib specs))
 ;; init ta-lib
 (ta-initialize)
