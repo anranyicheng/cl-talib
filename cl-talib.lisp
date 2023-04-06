@@ -1,16 +1,16 @@
 ;;;; cl-talib.lisp
-;;;; 对于返回值是 integer 的函数,返回值有三个 -100 ,0 ,100. 0: 表示匹配结果不符,无,
-;;;; 100 表示匹配该形态模式, -100: 表示匹配该位置相反反的形态,比如底部弃婴,和顶部弃婴
 (in-package #:cl-talib)
-;; /usr/lib/libta_lib.so
+
 ;;---------------------------------------------------------------->>>
 #+sbcl
 (eval-when (:compile-toplevel :load-toplevel :execute)
   (sb-int:set-floating-point-modes :traps nil))
+;; Arithmetic error FLOATING-POINT-INVALID-OPERATION signalled ---<<<
+
 (eval-when (:compile-toplevel :load-toplevel)
   (ensure-directories-exist
    (concatenate 'string (namestring (asdf:system-source-directory :cl-talib)) "specs/")))
-;; Arithmetic error FLOATING-POINT-INVALID-OPERATION signalled ---<<<
+
 (cffi:define-foreign-library talib
   (:unix (:or "libta_lib.so" "libta_lib.so.0"))
   (t (:default "libta_lib")))
