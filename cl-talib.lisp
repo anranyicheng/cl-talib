@@ -39,7 +39,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-sma-lookback period)))
     (ta-sma beg-idx end-idx real period out-begidx out-nb-element
 	    (cffi:mem-aptr out-real :double lookback))
@@ -62,7 +62,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-ema-lookback period)))
     (ta-ema beg-idx end-idx real period out-begidx out-nb-element
 	    (cffi:mem-aptr out-real :double lookback))
@@ -86,7 +86,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-wma-lookback period)))
     (ta-wma beg-idx end-idx real period out-begidx out-nb-element
 	    (cffi:mem-aptr out-real :double lookback))
@@ -110,7 +110,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-dema-lookback period)))
     (ta-dema beg-idx end-idx real period out-begidx out-nb-element
 	     (cffi:mem-aptr out-real :double lookback))
@@ -133,7 +133,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-tema-lookback period)))
     (ta-tema beg-idx end-idx real period out-begidx out-nb-element
 	     (cffi:mem-aptr out-real :double lookback))
@@ -156,7 +156,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-trima-lookback period)))
     (ta-trima beg-idx end-idx real period out-begidx out-nb-element
 	      (cffi:mem-aptr out-real :double lookback))
@@ -179,7 +179,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-kama-lookback period)))
     (ta-kama beg-idx end-idx real period out-begidx out-nb-element
 	     (cffi:mem-aptr out-real :double lookback))
@@ -202,7 +202,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-t3-lookback period (coerce vfactor 'double-float))))
     (ta-t3 beg-idx end-idx real period (coerce vfactor 'double-float)
 	   out-begidx out-nb-element (cffi:mem-aptr out-real :double lookback))
@@ -225,11 +225,11 @@
 	(out-mama (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(out-fama (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-mama-lookback (coerce fastlimit 'double-float)
 				    (coerce slowlimit 'double-float))))
     (ta-mama beg-idx end-idx real  (coerce fastlimit 'double-float)
@@ -262,15 +262,15 @@
 	(out-up-band (cffi:foreign-alloc
 		      :double
 		      :initial-contents
-		      (make-array size :element-type 'double-float :initial-element 0.0)))
+		      (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(out-mid-band (cffi:foreign-alloc
 		       :double
 		       :initial-contents
-		       (make-array size :element-type 'double-float :initial-element 0.0)))
+		       (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(out-dn-band (cffi:foreign-alloc
 		      :double
 		      :initial-contents
-		      (make-array size :element-type 'double-float :initial-element 0.0)))
+		      (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-bbands-lookback period (coerce nb-devup 'double-float)
 				      (coerce nb-devdn 'double-float)
 				      matype)))
@@ -306,7 +306,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-rsi-lookback period)))
     (ta-rsi  beg-idx end-idx real period out-begidx out-nb-element
 	     (cffi:mem-aptr out-real :double lookback))
@@ -332,15 +332,15 @@
 	(out-macd (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(out-macd-hist (cffi:foreign-alloc
 			:double
 			:initial-contents
-			(make-array size :element-type 'double-float :initial-element 0.0)))
+			(make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(out-signal (cffi:foreign-alloc
 		     :double
 		     :initial-contents
-		     (make-array size :element-type 'double-float :initial-element 0.0)))
+		     (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-macd-lookback fastperiod slowperiod signalperiod)))
     (ta-macd  beg-idx end-idx real fastperiod slowperiod signalperiod
 	      out-begidx out-nb-element
@@ -374,15 +374,15 @@
 	(out-macd (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(out-macd-hist (cffi:foreign-alloc
 			:double
 			:initial-contents
-			(make-array size :element-type 'double-float :initial-element 0.0)))
+			(make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(out-signal (cffi:foreign-alloc
 		     :double
 		     :initial-contents
-		     (make-array size :element-type 'double-float :initial-element 0.0)))
+		     (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-macdext-lookback fastperiod  fast_matype
 				       slowperiod slow_matype
 				       signalperiod signal-matype)))
@@ -432,11 +432,11 @@
 	(out-slowk (cffi:foreign-alloc
 		    :double
 		    :initial-contents
-		    (make-array size :element-type 'double-float :initial-element 0.0)))
+		    (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(out-slowd (cffi:foreign-alloc
 		    :double
 		    :initial-contents
-		    (make-array size :element-type 'double-float :initial-element 0.0)))
+		    (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-stoch-lookback fastk_period slowk_period slowk_matype
 				     slowd_period slowd_matype)))
     (ta-stoch beg-idx end-idx in-high in-low in-close
@@ -484,11 +484,11 @@
 	(out-fastk (cffi:foreign-alloc
 		    :double
 		    :initial-contents
-		    (make-array size :element-type 'double-float :initial-element 0.0)))
+		    (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(out-fastd (cffi:foreign-alloc
 		    :double
 		    :initial-contents
-		    (make-array size :element-type 'double-float :initial-element 0.0)))
+		    (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-stochf-lookback fastk_period fastd_period fastd_matype)))
     (ta-stochf beg-idx end-idx in-high in-low in-close
 	       fastk_period fastd_period fastd_matype
@@ -519,11 +519,11 @@
 	(out-fastk (cffi:foreign-alloc
 		    :double
 		    :initial-contents
-		    (make-array size :element-type 'double-float :initial-element 0.0)))
+		    (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(out-fastd (cffi:foreign-alloc
 		    :double
 		    :initial-contents
-		    (make-array size :element-type 'double-float :initial-element 0.0)))
+		    (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-stochrsi-lookback period fastk_period fastd_period fastd_matype)))
     (ta-stochrsi  beg-idx end-idx real period
 		  fastk_period fastd_period fastd_matype 
@@ -566,7 +566,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-cci-lookback period)))
     (ta-cci  beg-idx end-idx in-high in-low in-close
 	     period out-begidx out-nb-element
@@ -603,7 +603,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-willr-lookback period)))
     (ta-willr beg-idx end-idx in-high in-low in-close
 	      period out-begidx out-nb-element
@@ -672,7 +672,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-acos-lookback)))
     (ta-acos beg-idx end-idx real out-begidx out-nb-element
 	     (cffi:mem-aptr out-real :double lookback))
@@ -696,7 +696,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-asin-lookback)))
     (ta-asin beg-idx end-idx real out-begidx out-nb-element
 	     (cffi:mem-aptr out-real :double lookback))
@@ -720,7 +720,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-atan-lookback)))
     (ta-atan beg-idx end-idx real out-begidx out-nb-element
 	     (cffi:mem-aptr out-real :double lookback))
@@ -762,7 +762,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-ad-lookback)))
     (ta-ad beg-idx end-idx in-high in-low in-close in-volume
 	   out-begidx out-nb-element
@@ -793,7 +793,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-add-lookback)))
     (ta-add beg-idx end-idx in-data-1 in-data-2 
 	    out-begidx out-nb-element
@@ -838,7 +838,7 @@
 		   :double
 		   :initial-contents
 		   (make-array size :element-type 'double-float
-				    :initial-element 0.0)))
+				    :initial-element 0.0d0)))
 	(lookback (ta-adosc-lookback fastperiod slowperiod)))
     (ta-adosc beg-idx end-idx in-high in-low in-close in-volume
 	      fastperiod slowperiod
@@ -877,7 +877,7 @@
 		   :double
 		   :initial-contents
 		   (make-array size :element-type 'double-float
-				    :initial-element 0.0)))
+				    :initial-element 0.0d0)))
 	(lookback (ta-adx-lookback period)))
     (ta-adx beg-idx end-idx in-high in-low in-close period
 	    out-begidx out-nb-element
@@ -916,7 +916,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-adxr-lookback period)))
     (ta-adxr beg-idx end-idx in-high in-low in-close period
 	     out-begidx out-nb-element
@@ -943,7 +943,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-apo-lookback fastperiod slowperiod matype)))
     (ta-apo beg-idx end-idx real fastperiod slowperiod matype
 	    out-begidx out-nb-element
@@ -974,11 +974,11 @@
 	(out-aroon-dn (cffi:foreign-alloc
 		       :double
 		       :initial-contents
-		       (make-array size :element-type 'double-float :initial-element 0.0)))
+		       (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(out-aroon-up (cffi:foreign-alloc
 		       :double
 		       :initial-contents
-		       (make-array size :element-type 'double-float :initial-element 0.0)))
+		       (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-aroon-lookback period)))
     (ta-aroon beg-idx end-idx in-high in-low period
 	      out-begidx out-nb-element
@@ -1015,7 +1015,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 
 	(lookback (ta-aroonosc-lookback period)))
     (ta-aroonosc beg-idx end-idx in-high in-low period
@@ -1056,7 +1056,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-atr-lookback period)))
     (ta-atr beg-idx end-idx in-high in-low in-close period
 	    out-begidx out-nb-element
@@ -1099,7 +1099,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-avgprice-lookback)))
     (ta-avgprice beg-idx end-idx in-open in-high in-low in-close
 		 out-begidx out-nb-element
@@ -1131,7 +1131,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-beta-lookback period)))
     (ta-beta beg-idx end-idx in-data-1 in-data-2 period 
 	     out-begidx out-nb-element
@@ -1176,7 +1176,7 @@
     	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-bop-lookback)))
     (ta-bop beg-idx end-idx in-open in-high in-low in-close
 	    out-begidx out-nb-element
@@ -3916,7 +3916,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-ceil-lookback)))
     (ta-ceil beg-idx end-idx real out-begidx out-nb-element
 	     (cffi:mem-aptr out-real :double lookback))
@@ -3941,7 +3941,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-cmo-lookback period)))
     (ta-cmo beg-idx end-idx real period out-begidx out-nb-element
 	    (cffi:mem-aptr out-real :double lookback))
@@ -3972,7 +3972,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-correl-lookback period)))
     (ta-correl beg-idx end-idx in-data-1 in-data-2 period 
 	       out-begidx out-nb-element
@@ -3997,7 +3997,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-cos-lookback)))
     (ta-cos beg-idx end-idx real out-begidx out-nb-element
 	    (cffi:mem-aptr out-real :double lookback))
@@ -4021,7 +4021,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-cosh-lookback)))
     (ta-cosh beg-idx end-idx real out-begidx out-nb-element
 	     (cffi:mem-aptr out-real :double lookback))
@@ -4051,7 +4051,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-div-lookback)))
     (ta-div beg-idx end-idx in-data-1 in-data-2 
 	    out-begidx out-nb-element
@@ -4089,7 +4089,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-dx-lookback period)))
     (ta-dx beg-idx end-idx in-high in-low in-close
 	   period out-begidx out-nb-element
@@ -4115,7 +4115,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-exp-lookback)))
     (ta-exp beg-idx end-idx real out-begidx out-nb-element
 	    (cffi:mem-aptr out-real :double lookback))
@@ -4139,7 +4139,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-floor-lookback)))
     (ta-floor beg-idx end-idx real out-begidx out-nb-element
 	      (cffi:mem-aptr out-real :double lookback))
@@ -4163,7 +4163,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-ht-dcperiod-lookback )))
     (ta-ht-dcperiod beg-idx end-idx real out-begidx out-nb-element
 		    (cffi:mem-aptr out-real :double lookback))
@@ -4188,7 +4188,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-ht-dcphase-lookback )))
     (ta-ht-dcphase beg-idx end-idx real out-begidx out-nb-element
 		   (cffi:mem-aptr out-real :double lookback))
@@ -4213,11 +4213,11 @@
 	(out-inphase (cffi:foreign-alloc
 		      :double
 		      :initial-contents
-		      (make-array size :element-type 'double-float :initial-element 0.0)))
+		      (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(out-quadrature (cffi:foreign-alloc
 			 :double
 			 :initial-contents
-			 (make-array size :element-type 'double-float :initial-element 0.0)))
+			 (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-ht-phasor-lookback )))
     (ta-ht-phasor beg-idx end-idx real out-begidx out-nb-element
 		  (cffi:mem-aptr out-inphase :double lookback)
@@ -4246,11 +4246,11 @@
 	(out-inphase (cffi:foreign-alloc
 		      :double
 		      :initial-contents
-		      (make-array size :element-type 'double-float :initial-element 0.0)))
+		      (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(out-quadrature (cffi:foreign-alloc
 			 :double
 			 :initial-contents
-			 (make-array size :element-type 'double-float :initial-element 0.0)))
+			 (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-ht-sine-lookback )))
     (ta-ht-sine beg-idx end-idx real out-begidx out-nb-element
 		(cffi:mem-aptr out-inphase :double lookback)
@@ -4279,7 +4279,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-ht-trendline-lookback )))
     (ta-ht-trendline beg-idx end-idx real out-begidx out-nb-element
 		     (cffi:mem-aptr out-real :double lookback))
@@ -4330,7 +4330,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-linearreg-lookback period)))
     (ta-linearreg beg-idx end-idx real period out-begidx out-nb-element
 		  (cffi:mem-aptr out-real :double lookback))
@@ -4354,7 +4354,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-linearreg-angle-lookback period)))
     (ta-linearreg-angle beg-idx end-idx real period out-begidx out-nb-element
 			(cffi:mem-aptr out-real :double lookback))
@@ -4378,7 +4378,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-linearreg-intercept-lookback period)))
     (ta-linearreg-intercept beg-idx end-idx real period out-begidx out-nb-element
 			    (cffi:mem-aptr out-real :double lookback))
@@ -4403,7 +4403,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-linearreg-slope-lookback period)))
     (ta-linearreg-slope beg-idx end-idx real period out-begidx out-nb-element
 			(cffi:mem-aptr out-real :double lookback))
@@ -4428,7 +4428,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-ln-lookback)))
     (ta-ln beg-idx end-idx real out-begidx out-nb-element
 	   (cffi:mem-aptr out-real :double lookback))
@@ -4453,7 +4453,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-log10-lookback)))
     (ta-log10 beg-idx end-idx real out-begidx out-nb-element
 	      (cffi:mem-aptr out-real :double lookback))
@@ -4478,15 +4478,15 @@
 	(out-macd (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(out-macd-hist (cffi:foreign-alloc
 			:double
 			:initial-contents
-			(make-array size :element-type 'double-float :initial-element 0.0)))
+			(make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(out-signal (cffi:foreign-alloc
 		     :double
 		     :initial-contents
-		     (make-array size :element-type 'double-float :initial-element 0.0)))
+		     (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-macdfix-lookback signalperiod)))
     
     (ta-macdfix beg-idx end-idx real signalperiod
@@ -4529,7 +4529,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-mavp-lookback minperiod maxperiod matype)))
     (ta-mavp beg-idx end-idx in-data in-periods
 	     minperiod maxperiod matype
@@ -4556,7 +4556,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-max-lookback  period)))
     (ta-max beg-idx end-idx real period out-begidx out-nb-element
 	    (cffi:mem-aptr out-real :double lookback))
@@ -4614,7 +4614,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-medprice-lookback)))
     (ta-medprice beg-idx end-idx in-high in-low 
 		 out-begidx out-nb-element
@@ -4658,7 +4658,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-mfi-lookback period)))
     (ta-mfi beg-idx end-idx in-high in-low in-close in-volume
 	    period out-begidx out-nb-element
@@ -4685,7 +4685,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-midpoint-lookback  period)))
     (ta-midpoint beg-idx end-idx in-real period 
 		 out-begidx out-nb-element
@@ -4717,7 +4717,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-midprice-lookback period)))
     (ta-midprice beg-idx end-idx in-high in-low period 
 		 out-begidx out-nb-element
@@ -4743,7 +4743,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-min-lookback  period)))
     (ta-min beg-idx end-idx real period out-begidx out-nb-element
 	    (cffi:mem-aptr out-real :double lookback))
@@ -4796,11 +4796,11 @@
 	(out-min (cffi:foreign-alloc
 		  :double
 		  :initial-contents
-		  (make-array size :element-type 'double-float :initial-element 0.0)))
+		  (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(out-max (cffi:foreign-alloc
 		  :double
 		  :initial-contents
-		  (make-array size :element-type 'double-float :initial-element 0.0)))
+		  (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-minmax-lookback  period)))
     (ta-minmax beg-idx end-idx real period out-begidx out-nb-element
 	       (cffi:mem-aptr out-min :double lookback)
@@ -4875,7 +4875,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-minus-di-lookback period)))
     (ta-minus-di beg-idx end-idx in-high in-low in-close period
 		 out-begidx out-nb-element
@@ -4907,7 +4907,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-minus-dm-lookback period)))
     (ta-minus-dm beg-idx end-idx in-high in-low period
 		 out-begidx out-nb-element
@@ -4933,7 +4933,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-mom-lookback  period)))
     (ta-mom beg-idx end-idx real period out-begidx out-nb-element
 	    (cffi:mem-aptr out-real :double lookback))
@@ -4964,7 +4964,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-mult-lookback)))
     (ta-mult beg-idx end-idx in-data-1 in-data-2 
 	     out-begidx out-nb-element
@@ -5002,7 +5002,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-natr-lookback period)))
     (ta-natr beg-idx end-idx in-high in-low in-close period
 	     out-begidx out-nb-element
@@ -5034,7 +5034,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-obv-lookback)))
     (ta-obv beg-idx end-idx in-data in-volume
 	    out-begidx out-nb-element
@@ -5072,7 +5072,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-plus-di-lookback period)))
     (ta-plus-di beg-idx end-idx in-high in-low in-close period
 		out-begidx out-nb-element
@@ -5103,7 +5103,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-plus-dm-lookback period)))
     (ta-plus-dm beg-idx end-idx in-high in-low period
 		out-begidx out-nb-element
@@ -5129,7 +5129,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-ppo-lookback fastperiod slowperiod matype)))
     (ta-ppo beg-idx end-idx in-real 
 	    fastperiod slowperiod matype
@@ -5157,7 +5157,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-roc-lookback  period)))
     (ta-roc beg-idx end-idx real period out-begidx out-nb-element
 	    (cffi:mem-aptr out-real :double lookback))
@@ -5182,7 +5182,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-rocp-lookback  period)))
     (ta-rocp beg-idx end-idx real period out-begidx out-nb-element
 	     (cffi:mem-aptr out-real :double lookback))
@@ -5208,7 +5208,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-rocr-lookback  period)))
     (ta-rocr beg-idx end-idx real period out-begidx out-nb-element
 	     (cffi:mem-aptr out-real :double lookback))
@@ -5233,7 +5233,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-rocr100-lookback  period)))
     (ta-rocr100 beg-idx end-idx real period out-begidx out-nb-element
 		(cffi:mem-aptr out-real :double lookback))
@@ -5264,7 +5264,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-sar-lookback (coerce acceleration 'double-float)
 				   (coerce maximun 'double-float))))
     (ta-sar beg-idx end-idx in-high in-low
@@ -5307,7 +5307,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-sarext-lookback
 		   (coerce startvalue 'double-float)
 		   (coerce offsetonreverse 'double-float)
@@ -5349,7 +5349,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-sin-lookback)))
     (ta-sin beg-idx end-idx real out-begidx out-nb-element
 	    (cffi:mem-aptr out-real :double lookback))
@@ -5374,7 +5374,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-sinh-lookback)))
     (ta-sinh beg-idx end-idx real out-begidx out-nb-element
 	     (cffi:mem-aptr out-real :double lookback))
@@ -5398,7 +5398,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-sqrt-lookback)))
     (ta-sqrt beg-idx end-idx real out-begidx out-nb-element
 	     (cffi:mem-aptr out-real :double lookback))
@@ -5423,7 +5423,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-stddev-lookback period (coerce nbdev 'double-float))))
     (ta-stddev beg-idx end-idx real
 	       period  (coerce nbdev 'double-float)
@@ -5455,7 +5455,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-sub-lookback )))
     (ta-sub beg-idx end-idx in-data-1 in-data-2 
 	    out-begidx out-nb-element
@@ -5481,7 +5481,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-sum-lookback period)))
     (ta-sum beg-idx end-idx real period 
 	    out-begidx out-nb-element
@@ -5507,7 +5507,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-tan-lookback)))
     (ta-tan beg-idx end-idx real out-begidx out-nb-element
 	    (cffi:mem-aptr out-real :double lookback))
@@ -5532,7 +5532,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-tanh-lookback)))
     (ta-tanh beg-idx end-idx real out-begidx out-nb-element
 	     (cffi:mem-aptr out-real :double lookback))
@@ -5569,7 +5569,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-trange-lookback)))
     (ta-trange beg-idx end-idx in-high in-low in-close
 	       out-begidx out-nb-element
@@ -5595,7 +5595,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-trix-lookback period)))
     (ta-trix beg-idx end-idx real period out-begidx out-nb-element
 	     (cffi:mem-aptr out-real :double lookback))
@@ -5620,7 +5620,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-tsf-lookback period)))
     (ta-tsf beg-idx end-idx real period out-begidx out-nb-element
 	    (cffi:mem-aptr out-real :double lookback))
@@ -5657,7 +5657,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-typprice-lookback)))
     (ta-typprice beg-idx end-idx in-high in-low in-close
 		 out-begidx out-nb-element
@@ -5696,7 +5696,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-ultosc-lookback period-1 period-2 period-3)))
     (ta-ultosc beg-idx end-idx in-high in-low in-close
 	       period-1 period-2 period-3
@@ -5723,7 +5723,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-var-lookback period (coerce nbdev 'double-float))))
     (ta-var beg-idx end-idx real
 	    period  (coerce nbdev 'double-float)
@@ -5762,7 +5762,7 @@
 	(out-real (cffi:foreign-alloc
 		   :double
 		   :initial-contents
-		   (make-array size :element-type 'double-float :initial-element 0.0)))
+		   (make-array size :element-type 'double-float :initial-element 0.0d0)))
 	(lookback (ta-wclprice-lookback)))
     (ta-wclprice beg-idx end-idx in-high in-low in-close
 		 out-begidx out-nb-element
