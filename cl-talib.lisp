@@ -11,6 +11,8 @@
   (ensure-directories-exist
    (concatenate 'string (namestring (asdf:system-source-directory :cl-talib)) "specs/")))
 
+(pushnew #P"/usr/local/lib/" cffi::*foreign-library-directories* :test #'equal)
+
 (cffi:define-foreign-library talib
   (:unix (:or "libta_lib.so" "libta_lib.so.0"))
   (t (:default "libta_lib")))
